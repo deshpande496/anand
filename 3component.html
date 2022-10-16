@@ -1,0 +1,42 @@
+<!--take 2 cdn files one for react and another for react dom  -->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<!-- 3rd cdn bootstrap css file -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<!-- babel compiler to use html tag in script   ,rendering logic and ui logic done together-->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+<div id="root"></div>
+
+<script type="text/babel">
+    // function component creation  //what we recieve in () is called props
+    function Product(xyz){
+        console.log(xyz);
+        return(<div class="col-xl-3">
+            <img src={xyz.path} alt="" class="img-fluid"/>  
+            <h2>{xyz.price}</h2>
+            <p>{xyz.name}</p>
+            <p><button>Add to Cart</button></p>
+            </div>)
+    }
+    var record=(
+    <div class="container">
+        <div class="row">
+            <Product name="product 1" price="1500" path="https://rukminim1.flixcart.com/image/660/792/jvv9zm80/t-shirt/n/k/j/m-fj9215-adidas-original-imafgzstt4dndxnq.jpeg?q=50"></Product>
+            <Product name="product 2" price="2000" path="https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/r/f/n/s-kid-165-s-elabot-original-imaggsqwkfsuraze.jpeg?q=70"></Product>
+            <Product name="product 3" price="2500" path="https://rukminim1.flixcart.com/image/832/832/ktd9mkw0/t-shirt/q/h/j/l-necktop-red-base-41-original-imag6qdhgygmybkh.jpeg?q=70"></Product>
+            <Product name="product 4" price="3000" path="https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/z/c/k/m-3161-the-dry-state-original-imafw2k2sz3ckv4e-bb.jpeg?q=70"/>
+            
+        
+        </div>`
+    </div>
+
+    )
+    ReactDOM.render(record,document.getElementById("root"))
+
+</script>
+
